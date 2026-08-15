@@ -1222,7 +1222,7 @@ function startClock(){
   setInterval(()=>{const n=new Date();document.getElementById('live-clock').textContent=`${n.getUTCFullYear()}-${p(n.getUTCMonth()+1)}-${p(n.getUTCDate())} ${p(n.getUTCHours())}:${p(n.getUTCMinutes())}:${p(n.getUTCSeconds())} UTC`;},1000);
 }
 
-// ===== INIT =====ش
+// ===== INIT =====
 window.onload=function(){
   renderTable();startClock();updateDashStats();
   document.getElementById('chat-input').addEventListener('keypress',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendInputText();}});
