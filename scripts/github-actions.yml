@@ -1,0 +1,25 @@
+name: 📊 تحديث البيانات العقارية
+
+on:
+  schedule:
+    - cron: '0 3 * * 4'  # كل خميس الساعة 6 صباحاً الدوحة
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: تشغيل التحديث
+        env:
+          APIFY_API_KEY: ${{ secrets.APIFY_API_KEY }}
+          APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
+        run: |
+          node scripts/update-data.js
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 تحديث تلقائي للبيانات"
+          file_pattern: "properties.json"
