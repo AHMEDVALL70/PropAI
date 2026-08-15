@@ -29,6 +29,10 @@ html[dir="ltr"] .nav-item{border-right:none;border-left:4px solid transparent}
 .nav-item.active{background:#1a3154;color:#10b981;border-right-color:#10b981;font-weight:600}
 html[dir="ltr"] .nav-item.active{border-right-color:transparent;border-left-color:#10b981}
 .nav-item i{width:16px;text-align:center;font-size:14px;flex-shrink:0}
+.nav-item.contact-nav{margin-top:20px;border-top:1px solid #1e2d47;padding-top:16px;border-right-color:#25D366}
+html[dir="ltr"] .nav-item.contact-nav{border-right-color:transparent;border-left-color:#25D366}
+.nav-item.contact-nav i{color:#25D366}
+.nav-item.contact-nav:hover{background:#1a2a1f}
 .main-pane{flex:1;display:flex;flex-direction:column;background:#0a0f1e;overflow:hidden;min-width:0}
 .top-nav{height:60px;background:#0d1526;border-bottom:1px solid #1e2d47;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:12px;flex-shrink:0}
 .top-left{display:flex;align-items:center;gap:12px}
@@ -41,6 +45,34 @@ html[dir="ltr"] .nav-item.active{border-right-color:transparent;border-left-colo
 .lang-btn{background:#1f2937;border:1px solid #374151;color:#94a3b8;padding:5px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;display:flex;align-items:center;gap:6px}
 .lang-btn:hover{background:#374151;color:#fff;border-color:#10b981}
 .lang-btn .flag{font-size:14px}
+
+/* ===== CONTACT BUTTON ===== */
+.contact-btn{background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.3);color:#25D366;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.contact-btn:hover{background:rgba(37,211,102,0.25);border-color:#25D366;transform:scale(1.02)}
+.contact-btn i{font-size:14px}
+
+/* ===== CONTACT MODAL ===== */
+.contact-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.25s}
+.contact-modal-overlay.active{opacity:1;pointer-events:auto}
+.contact-modal-box{background:#111827;border:1px solid #25D366;border-radius:12px;width:480px;max-width:95vw;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.6);transform:scale(0.95);transition:transform 0.25s}
+.contact-modal-overlay.active .contact-modal-box{transform:scale(1)}
+.contact-modal-head{padding:16px 20px;background:#1f2937;border-bottom:1px solid #1e2d47;display:flex;align-items:center;justify-content:space-between}
+.contact-modal-head h3{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:10px}
+.contact-modal-head h3 i{color:#25D366}
+.contact-modal-close{background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer;transition:color 0.2s;line-height:1}
+.contact-modal-close:hover{color:#fff}
+.contact-modal-body{padding:24px;max-height:78vh;overflow-y:auto;text-align:center}
+.contact-emoji{font-size:48px;margin-bottom:16px}
+.contact-whatsapp-btn{display:inline-block;background:#25D366;color:#fff;padding:14px 32px;border-radius:10px;font-size:18px;font-weight:600;text-decoration:none;margin:10px 0 20px;transition:transform 0.2s}
+.contact-whatsapp-btn:hover{transform:scale(1.05)}
+.contact-whatsapp-btn i{margin-left:8px}
+html[dir="ltr"] .contact-whatsapp-btn i{margin-left:0;margin-right:8px}
+.contact-info-box{background:#1f2937;border-radius:8px;padding:14px;margin-top:12px;text-align:right}
+html[dir="ltr"] .contact-info-box{text-align:left}
+.contact-info-box .label{font-size:12px;color:#94a3b8;margin-bottom:4px}
+.contact-info-box .value{font-size:13px;color:#cbd5e1}
+.contact-footer{font-size:11px;color:#4b5563;margin-top:16px}
+
 .content-body{flex:1;padding:20px;overflow-y:auto;display:none}
 .content-body.active{display:block}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
@@ -206,12 +238,12 @@ html[dir="ltr"] .typing-label{margin-right:0;margin-left:6px}
 @media(max-width:1100px){.analytics-grid{grid-template-columns:1fr}.chat-shell{grid-template-columns:1fr}.chat-sidebar-panel{display:none}}
 @media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}.filter-row.add-cols{grid-template-columns:1fr 1fr;row-gap:12px}.filter-row.add-cols>*:last-child{grid-column:1/-1}.filter-row.search-cols{grid-template-columns:1fr 1fr}.filter-row.search-cols>*:last-child{grid-column:1/-1}}
 @media(max-width:768px){.sidebar{position:fixed;top:0;right:0;height:100%;transform:translateX(100%)}.sidebar.open{transform:translateX(0)}.hamburger{display:flex;align-items:center;justify-content:center}.grid-4{grid-template-columns:1fr 1fr}.prop-detail-grid{grid-template-columns:1fr}.user-badge span{display:none}.time-box{display:none}.chat-shell{height:calc(100vh - 120px)}}
-@media(max-width:480px){.grid-4{grid-template-columns:1fr}.content-body{padding:14px}.stat-info .num{font-size:22px}}
+@media(max-width:480px){.grid-4{grid-template-columns:1fr}.content-body{padding:14px}.stat-info .num{font-size:22px}.contact-btn span{display:none}.contact-btn{padding:6px 10px}}
 </style>
 </head>
 <body>
 
-<!-- API MODAL - نسخة آمنة -->
+<!-- API MODAL -->
 <div class="api-modal" id="api-modal">
   <div class="api-modal-box">
     <h2><i class="fa-solid fa-shield-halved" style="color:#10b981"></i> <span data-ar="اتصال آمن بالمستشار الذكي" data-en="Secure AI Advisor Connection">اتصال آمن بالمستشار الذكي</span></h2>
@@ -233,6 +265,35 @@ html[dir="ltr"] .typing-label{margin-right:0;margin-left:6px}
   </div>
 </div>
 
+<!-- CONTACT MODAL -->
+<div class="contact-modal-overlay" id="contact-modal" onclick="handleContactModalClick(event)">
+  <div class="contact-modal-box">
+    <div class="contact-modal-head">
+      <h3><i class="fa-solid fa-phone"></i> <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span></h3>
+      <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
+    </div>
+    <div class="contact-modal-body">
+      <div class="contact-emoji">📱</div>
+      <h4 style="color:#fff;margin-bottom:8px;" data-ar="واتساب" data-en="WhatsApp">واتساب</h4>
+      <a href="https://wa.me/974736271" target="_blank" class="contact-whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> +974 7362 71
+      </a>
+      <div class="contact-info-box">
+        <div class="label">⏰ <span data-ar="أوقات العمل" data-en="Working Hours">أوقات العمل</span></div>
+        <div class="value" data-ar="الأحد - الخميس: 9 صباحاً – 10 مساءً" data-en="Sun - Thu: 9 AM – 10 PM">الأحد - الخميس: 9 صباحاً – 10 مساءً</div>
+        <div class="value" data-ar="الجمعة - السبت: 10 صباحاً – 8 مساءً" data-en="Fri - Sat: 10 AM – 8 PM">الجمعة - السبت: 10 صباحاً – 8 مساءً</div>
+      </div>
+      <div class="contact-info-box">
+        <div class="label">✉️ <span data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span></div>
+        <div class="value">ahmedvall@example.com</div>
+      </div>
+      <div class="contact-footer">
+        <span data-ar="للحصول على دعم فني أسرع، يُرجى إرفاق لقطة شاشة للخطأ" data-en="For faster support, please attach a screenshot of the error">للحصول على دعم فني أسرع، يُرجى إرفاق لقطة شاشة للخطأ</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
 <div class="shell">
@@ -249,6 +310,10 @@ html[dir="ltr"] .typing-label{margin-right:0;margin-left:6px}
       <li class="nav-item" onclick="switchTab('search',this)"><i class="fa-solid fa-magnifying-glass"></i> <span data-ar="البحث الذكي والتقييم" data-en="Smart Search & Valuation">البحث الذكي والتقييم</span></li>
       <li class="nav-item" onclick="switchTab('analytics',this)"><i class="fa-solid fa-chart-line"></i> <span data-ar="اتجاهات السوق العقاري" data-en="Market Analytics">اتجاهات السوق العقاري</span></li>
       <li class="nav-item" onclick="switchTab('assistant',this)"><i class="fa-solid fa-robot"></i> <span data-ar="المستشار العقاري الذكي" data-en="AI Assistant">المستشار العقاري الذكي</span></li>
+      <!-- Contact in Sidebar -->
+      <li class="nav-item contact-nav" onclick="showContactModal()">
+        <i class="fa-brands fa-whatsapp"></i> <span data-ar="📞 تواصل معنا" data-en="📞 Contact Us">📞 تواصل معنا</span>
+      </li>
     </ul>
   </div>
 
@@ -259,6 +324,10 @@ html[dir="ltr"] .typing-label{margin-right:0;margin-left:6px}
         <div class="top-title"><h2 id="page-title" data-ar="لوحة التحكم العامة" data-en="Dashboard">لوحة التحكم العامة</h2></div>
       </div>
       <div class="top-right">
+        <!-- CONTACT BUTTON -->
+        <button class="contact-btn" onclick="showContactModal()" title="اتصل بنا">
+          <i class="fa-solid fa-phone"></i> <span data-ar="اتصال" data-en="Contact">اتصال</span>
+        </button>
         <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">
           <span class="flag">🇬🇧</span> <span id="lang-label">EN</span>
         </button>
@@ -654,6 +723,12 @@ function applyLanguage(){
   if(welcomeMsg){
     welcomeMsg.innerHTML = welcomeMsg.getAttribute('data-' + currentLang);
   }
+  
+  // تحديث زر الاتصال
+  const contactBtn = document.querySelector('.contact-btn span');
+  if(contactBtn){
+    contactBtn.textContent = currentLang === 'ar' ? 'اتصال' : 'Contact';
+  }
 }
 
 // ===== DATA =====
@@ -683,7 +758,7 @@ for(let i=1031;i<=2050;i++){
 let currentPage=1,filteredData=[...PROPERTIES_DB];
 const PER_PAGE=10;
 
-// ===== قائمة أسعار المناطق الحقيقية من MCP Server =====
+// ===== قائمة أسعار المناطق الحقيقية =====
 const QATAR_ZONES_DB = {
     'west bay': 18000, 'musheireb': 15500, 'pearl porto arabia': 16500,
     'pearl qanat quartier': 16200, 'al sadd': 10500, 'bin mahmoud': 10000,
@@ -716,7 +791,7 @@ function localPrice(zone, type, size) {
     return Math.round(base * size * multiplier);
 }
 
-// ===== تحميل البيانات الحقيقية من ملف خارجي =====
+// ===== تحميل البيانات الحقيقية =====
 const DATA_SOURCE_URL = 'https://raw.githubusercontent.com/AHMEDVALL70/AhmedVall_PropAI/main/properties.json';
 
 async function loadRealData() {
@@ -868,9 +943,22 @@ function exportCSV(){
   showToast(currentLang==='ar'?'تم تصدير CSV بنجاح':'CSV exported successfully','success');
 }
 
+// ===== CONTACT MODAL FUNCTIONS =====
+function showContactModal() {
+    document.getElementById('contact-modal').classList.add('active');
+}
+function closeContactModal() {
+    document.getElementById('contact-modal').classList.remove('active');
+}
+function handleContactModalClick(e) {
+    if (e.target === document.getElementById('contact-modal')) {
+        closeContactModal();
+    }
+}
+
 // ===== SECURE AI MODE =====
 let SECURE_MODE = false;
-const PROXY_URL = 'https://your-proxy-server.com/api/chat'; // <-- غيّر هذا إلى رابط خادمك الوسيط
+const PROXY_URL = 'https://your-proxy-server.com/api/chat';
 
 function showApiModal(){
     document.getElementById('api-modal').style.display = 'flex';
