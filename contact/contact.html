@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تواصل معنا — منصة أحمد فال PropAI</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#0a0f1e,#1a2640);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.contact-card{background:#111827;border:1px solid #25D366;border-radius:16px;max-width:480px;width:100%;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,0.5);text-align:center}
+.logo{width:64px;height:64px;background:linear-gradient(135deg,#8a1538,#ba254f);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;font-weight:700;color:#fff;box-shadow:0 0 20px rgba(138,21,56,0.3)}
+.logo small{font-size:10px;display:block;opacity:0.7}
+h1{color:#fff;font-size:20px;margin-bottom:4px}
+.sub{color:#94a3b8;font-size:13px;margin-bottom:24px}
+.divider{height:1px;background:#1e2d47;margin:20px 0}
+.contact-item{background:#1f2937;border-radius:10px;padding:16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;transition:all 0.2s;text-align:right}
+.contact-item:hover{background:#2a3a50;transform:translateX(-4px)}
+.contact-item .icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-item .icon.whatsapp{background:rgba(37,211,102,0.15);color:#25D366}
+.contact-item .icon.email{background:rgba(59,130,246,0.15);color:#3b82f6}
+.contact-item .icon.phone{background:rgba(245,158,11,0.15);color:#f59e0b}
+.contact-item .info{flex:1}
+.contact-item .info .label{font-size:10px;color:#64748b;text-transform:uppercase}
+.contact-item .info .value{font-size:14px;color:#fff;font-weight:500}
+.contact-item a{text-decoration:none;color:#fff}
+.btn-whatsapp{display:inline-block;background:#25D366;color:#fff;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:600;text-decoration:none;transition:transform 0.2s;margin-top:8px}
+.btn-whatsapp:hover{transform:scale(1.04)}
+.btn-whatsapp i{margin-left:8px}
+.hours-box{background:#1f2937;border-radius:10px;padding:14px;margin-top:12px}
+.hours-box .row{display:flex;justify-content:space-between;font-size:13px;color:#94a3b8;padding:4px 0}
+.hours-box .row strong{color:#fff}
+.footer{font-size:11px;color:#4b5563;margin-top:20px}
+.back-link{color:#10b981;text-decoration:none;font-size:13px;display:inline-block;margin-top:12px}
+.back-link:hover{text-decoration:underline}
+@media(max-width:480px){.contact-card{padding:20px}}
+</style>
+</head>
+<body>
+
+<div class="contact-card">
+  <div class="logo">AF <small>PropAI</small></div>
+  <h1>📞 تواصل معنا</h1>
+  <p class="sub">فريق أحمد فال PropAI — دعم فني واستشارات عقارية</p>
+
+  <div class="divider"></div>
+
+  <!-- واتساب -->
+  <div class="contact-item">
+    <div class="icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+    <div class="info">
+      <div class="label">واتساب</div>
+      <div class="value"><a href="https://wa.me/974736271" target="_blank">+974 7362 71</a></div>
+    </div>
+  </div>
+
+  <!-- البريد الإلكتروني -->
+  <div class="contact-item">
+    <div class="icon email"><i class="fa-solid fa-envelope"></i></div>
+    <div class="info">
+      <div class="label">البريد الإلكتروني</div>
+      <div class="value"><a href="mailto:ahmedvall@example.com">ahmedvall@example.com</a></div>
+    </div>
+  </div>
+
+  <!-- الهاتف -->
+  <div class="contact-item">
+    <div class="icon phone"><i class="fa-solid fa-phone"></i></div>
+    <div class="info">
+      <div class="label">هاتف</div>
+      <div class="value">+974 7362 71</div>
+    </div>
+  </div>
+
+  <!-- زر واتساب -->
+  <a href="https://wa.me/974736271" target="_blank" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب
+  </a>
+
+  <!-- أوقات العمل -->
+  <div class="hours-box">
+    <div class="row"><span>🕐 الأحد - الخميس</span> <strong>9 صباحاً – 10 مساءً</strong></div>
+    <div class="row"><span>🕐 الجمعة - السبت</span> <strong>10 صباحاً – 8 مساءً</strong></div>
+  </div>
+
+  <div class="footer">
+    <i class="fa-solid fa-lock" style="color:#10b981"></i> جميع الاتصالات مشفرة وآمنة
+  </div>
+
+  <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-right"></i> العودة إلى المنصة</a>
+</div>
+
+</body>
+</html>
