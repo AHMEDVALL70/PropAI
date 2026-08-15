@@ -1,0 +1,62 @@
+[
+  {
+    "id": "QA-PROP-2001",
+    "zone": "Pearl Qatar (Porto Arabia)",
+    "type": "شقة",
+    "size": 165,
+    "beds": "2",
+    "price": 2650000,
+    "pred": 2550000,
+    "status": "Fair Price",
+    "cls": "mid",
+    "desc": "شقة فاخرة على المارينا مع إطلالة بحرية مباشرة."
+  },
+  {
+    "id": "QA-PROP-2002",
+    "zone": "Lusail Marina",
+    "type": "شقة",
+    "size": 140,
+    "beds": "2",
+    "price": 1950000,
+    "pred": 2100000,
+    "status": "Investment Deal",
+    "cls": "low",
+    "desc": "شقة حديثة قرب الفنادق والمجمعات التجارية."
+  },
+  {
+    "id": "QA-PROP-2003",
+    "zone": "Lusail Al Yasmine",
+    "type": "فيلا",
+    "size": 450,
+    "beds": "4+",
+    "price": 5200000,
+    "pred": 5300000,
+    "status": "Fair Price",
+    "cls": "mid",
+    "desc": "فيلا عصرية بتشطيبات فاخرة وحديقة خاصة."
+  },
+  {
+    "id": "QA-PROP-2004",
+    "zone": "Musheireb",
+    "type": "شقة",
+    "size": 180,
+    "beds": "3",
+    "price": 3100000,
+    "pred": 2950000,
+    "status": "Overpriced",
+    "cls": "high",
+    "desc": "وحدة في مشروع المشيرب المستدام، طلب إيجاري مرتفع."
+  },
+  {
+    "id": "QA-PROP-2005",
+    "zone": "West Bay",
+    "type": "بنتهاوس",
+    "size": 320,
+    "beds": "4+",
+    "price": 6800000,
+    "pred": 6900000,
+    "status": "Fair Price",
+    "cls": "mid",
+    "desc": "إطلالة بانورامية على أبراج الدوحة والساحل."
+  }
+]
